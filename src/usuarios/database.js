@@ -14,11 +14,11 @@ class Database {
 
   async edit(id, nome, email, telefone, senha, status) {
     const result = await bd.Usuario.update({
-      nome: nome,
-      email: email,
-      telefone: telefone,
-      senha: senha,
-      status: status
+      nome,
+      email,
+      telefone,
+      senha,
+      status
     }, {
       where: { id: id }
     });
@@ -27,11 +27,11 @@ class Database {
 
   async create(nome, email, telefone, senha, status) {
     const result = await bd.Usuario.create({
-      nome: nome,
-      email: telefone,
-      telefone: telefone,
-      senha: senha,
-      status: status
+      nome,
+      email,
+      telefone,
+      senha,
+      status
     })
     return result
   }

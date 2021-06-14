@@ -6,9 +6,9 @@ const UsuariosController = require('./controller')
 router.get('/', UsuariosController.list);
 router.get('/:id', UsuariosController.listById);
 /* POST create user. */
-router.post('/', UsuariosController.create);
+router.post('/', UsuariosController.createOrEdit);
 /* PUT update user.*/
-router.put('/:id', UsuariosController.edit);
+router.put('/:id', UsuariosController.createOrEdit)
 /* DELETE user. */
 router.delete('/:id', UsuariosController.remove);
 

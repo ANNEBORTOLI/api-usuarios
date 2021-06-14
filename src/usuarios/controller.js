@@ -15,29 +15,13 @@ class Controller {
     return usuario ? res.json(usuario) : res.json({ "status": "User Not found" });
   }
 
-  async create(req, res) {
-    const { id } = req.params;
-    const { nome, email, telefone, senha, status } = req.body;
-
-    await UsuariosService.saveUser({
-      id,
-      nome,
-      email,
-      telefone,
-      senha,
-      status
-    });
-
-    res.status(201).json({ success: true })
-  }
-
-  async edit(req, res) {
+  async createOrEdit(req, res) {
     const { id } = req.params;
     const { nome, email, telefone, senha, status } = req.body;
 
     await UsuariosService.saveUser({ id: id, nome, email, telefone, senha, status });
 
-    res.json({ success: true });
+    res.status(201).json({ success: true })
   }
 
   async remove(req, res) {
