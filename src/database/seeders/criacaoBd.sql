@@ -1,0 +1,11 @@
+SELECT * FROM usuarios;
+DROP TABLE IF EXISTS usuarios;
+
+CREATE TABLE usuarios(
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100),
+email VARCHAR(100),
+telefone VARCHAR(100),
+senha VARCHAR(100),
+status BOOLEAN
+);
